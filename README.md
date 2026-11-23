@@ -129,7 +129,7 @@ API ตรวจสอบสถานะที่ `GET /api/health` อ่าน
 
 1. สร้างโปรเจกต์ Backend จาก repo นี้โดยเลือก Root Directory เป็น `backend` และ Application Preset เป็น **Other** ตั้ง `DATABASE_URL` เป็น PostgreSQL connection string ของ Supabase ใน Environment Variables ให้ฐานข้อมูลมีตารางตาม `backend/sql/workspace.sql` หรือย้าย workspace ที่ใช้อยู่ด้วย `npm run migrate:workspace` ตามขั้นตอนด้านบน
 2. Deploy Backend แล้วเปิด `/api/health` บนโดเมน Backend เพื่อตรวจว่า API ตอบกลับ
-3. สร้างโปรเจกต์ Frontend จาก repo เดียวกันโดยเลือก Root Directory เป็น `frontend` และ Application Preset เป็น **Vite** ใช้ Build Command `npm run build` กับ Output Directory `dist` ตั้ง `BACKEND_URL` เป็น HTTPS origin ของ Backend เช่น `https://gofivetest-api.vercel.app` แล้ว deploy
+3. สร้างโปรเจกต์ Frontend จาก repo เดียวกันโดยเลือก Root Directory เป็น `frontend` และ Application Preset เป็น **Vite** ใช้ Build Command `npm run build` กับ Output Directory `dist` โดย `frontend/vercel.json` ส่งคำขอ `/api/*` ไปที่ `https://gofiveserver.vercel.app` หากเปลี่ยนโดเมน Backend ให้แก้ปลายทางในไฟล์นี้แล้ว deploy Frontend
 4. เปิด `/api/workspace` ผ่านโดเมน Frontend เพื่อตรวจเส้นทาง API จากนั้นเปิดหน้าเว็บเพื่อทดสอบการโหลด workspace หากฐานข้อมูลยังว่าง การเปิดหน้าเว็บครั้งแรกจะสร้าง workspace ตัวอย่าง
 
 ทั้งสองโปรเจกต์ใช้ไฟล์ lock ที่ราก repo ให้เปิด **Include files outside the Root Directory in the Build Step** หากเคยปิดไว้ ใช้ข้อมูลตัวอย่างในการทดสอบออนไลน์ เพราะ API ของต้นแบบยังไม่มีการยืนยันตัวตน
