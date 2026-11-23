@@ -540,6 +540,12 @@ export default function App() {
       onCancel={event => { event.preventDefault(); if (!writeInProgress.current) setForm(undefined); }}>
       {form && <ActionForm spec={form} onClose={() => setForm(undefined)} />}
     </dialog>
-    <div id="notice" role="status" aria-live="polite">{saving ? t("กำลังบันทึกข้อมูล") : notice}</div>
+    <div className="floating-actions">
+      <div id="notice" role="status" aria-live="polite">{saving ? t("กำลังบันทึกข้อมูล") : notice}</div>
+      <a className="btn part-two-link" href={`${import.meta.env.BASE_URL}Q2_ANS_Vutthipatr.pdf`}
+        target="_blank" rel="noopener noreferrer">
+        Part 2 — Questions (PDF)<span className="sr-only"> · {t("เปิดในแท็บใหม่")}</span>
+      </a>
+    </div>
   </>;
 }
