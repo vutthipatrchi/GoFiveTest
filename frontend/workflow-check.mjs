@@ -3,7 +3,8 @@ import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { createServer } from "vite";
 
-const server = await createServer({ server: { middlewareMode: true }, appType: "custom" });
+// A separate cache keeps this check from colliding with a running dev server.
+const server = await createServer({ cacheDir: "node_modules/.vite-check", server: { middlewareMode: true }, appType: "custom" });
 try {
   const { default: App } = await server.ssrLoadModule("/src/App.tsx");
   const { personAction } = await server.ssrLoadModule("/src/components/actions.tsx");

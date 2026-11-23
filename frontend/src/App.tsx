@@ -464,7 +464,7 @@ export default function App() {
   return <>
     <div className="shell">
       <aside className="rail" inert={waiting}>
-        <div className="brand"><span className="brand-mark"><BrandMark size={34} /></span><div>Performance<span>Workspace</span></div></div>
+        <div className="brand"><span className="brand-mark"><BrandMark size={44} /></span><div>Performance<span>Workspace</span></div></div>
         <nav aria-label={t("เมนูหลัก")}>
           {groups.map((group, groupIndex) => <div className="nav-group" key={group.label ?? groupIndex}>
             {group.label && <p className="nav-label">{group.label}</p>}

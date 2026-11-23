@@ -1,8 +1,13 @@
+@font-face { font-family: "Gofive"; src: url("/fonts/gofive-text.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Gofive"; src: url("/fonts/gofive-medium.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Gofive"; src: url("/fonts/gofive-semi_bold.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Gofive"; src: url("/fonts/gofive-bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+
 /* ==========================================================
    Design tokens
    ========================================================== */
 :root {
-  --font: "IBM Plex Sans Thai", "Leelawadee UI", "Segoe UI", system-ui, sans-serif;
+  --font: "Gofive", "Sarabun", "Leelawadee UI", "Segoe UI", system-ui, sans-serif;
 
   --bg: #f2eee9;
   --paper: #ffffff;

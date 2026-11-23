@@ -22,16 +22,8 @@ export function Icon({ name, size = 18 }: { name: keyof typeof iconPaths; size?:
     strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={iconPaths[name]} /></svg>;
 }
 
-/** Shared Space logo: three overlapping squares (Employee, Manager, HR) meeting in one shared centre. */
 export function BrandMark({ size = 24 }: { size?: number }) {
-  return <svg width={size} height={size} viewBox="0 0 48 48" aria-hidden="true">
-    <rect x="20" y="20" width="8" height="8" fill="var(--accent-dark)" />
-    <g fill="none" stroke="currentColor" strokeWidth={4}>
-      <rect x="5" y="5" width="23" height="23" />
-      <rect x="20" y="5" width="23" height="23" />
-      <rect x="12.5" y="20" width="23" height="23" />
-    </g>
-  </svg>;
+  return <img src={`${import.meta.env.BASE_URL}empeo-logo.svg`} width={size} height={size} alt="" />;
 }
 
 export function Button({ children, onClick, variant = "", type = "button", disabled, title }: {
