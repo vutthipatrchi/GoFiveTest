@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "",
+  "outputDirectory": "public",
+  "functions": {
+    "api/workspace.mjs": {
+      "includeFiles": "certs/prod-ca-2021.crt"
+    }
+  }
+}
